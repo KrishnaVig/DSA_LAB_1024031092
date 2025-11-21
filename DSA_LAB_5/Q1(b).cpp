@@ -27,8 +27,34 @@ class LinkedList{
         temp->next=newNode;
         newNode->next=NULL;
     }
+        void displayList(){
+        Node* current = head;
+        if (head == NULL) {
+            cout << "The list is empty." << endl;
+            return;
+        }
+        cout << "List: ";
+        while(current != NULL){
+            cout << current->data << " -> ";
+            current = current->next;
+        }
+        cout << "NULL" << endl;
+    }
 };
 int main(){
+LinkedList list;
+cout << "Inserting 10, 20, and 30 at the end" << endl;
 
+    
+    list.insertAtEnd(10); 
+    list.displayList(); 
+
+    
+    list.insertAtEnd(20); 
+    list.displayList(); 
+
+    
+    list.insertAtEnd(30); 
+    list.displayList();
 return 0;
 }

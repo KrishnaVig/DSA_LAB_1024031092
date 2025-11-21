@@ -23,8 +23,47 @@ class LinkedList{
         head=head->next;
         delete temp;
     }
+  void insertAtBegin(int val){
+        Node* temp=new Node(val);
+            if(head==NULL){
+                head=temp;
+             }
+             temp->next=head;
+             head=temp;
+    }
+    void displayList(){
+        Node* current = head;
+        if (head == NULL) {
+            cout << "The list is empty." << endl;
+            return;
+        }
+        cout << "List: ";
+        while(current != NULL){
+            cout << current->data << " -> ";
+            current = current->next;
+        }
+        cout << "NULL" << endl;
+    }
 };
 int main(){
+LinkedList list;
 
+    
+    list.insertAtBegin(10);
+    list.insertAtBegin(20);
+    list.insertAtBegin(30);
+    list.displayList(); 
+
+    
+    list.deleteBegin();
+    list.displayList(); 
+    
+    
+    list.deleteBegin();
+    list.displayList(); 
+    
+    list.deleteBegin();
+    list.displayList();
+    
 return 0;
 }
